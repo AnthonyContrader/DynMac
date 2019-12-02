@@ -1,2 +1,2 @@
-# DynMac
-Dynamic Machines
+# SAMPLE
+Sample Projects
