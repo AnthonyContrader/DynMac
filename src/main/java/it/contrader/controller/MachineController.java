@@ -3,13 +3,13 @@ package it.contrader.controller;
 import java.util.List;
 
 import it.contrader.dto.MachineDTO;
+import it.contrader.dto.UserDTO;
 import it.contrader.main.MainDispatcher;
 import it.contrader.service.MachineService;
 
 public class MachineController implements Controller {
 
 	private static String sub_package = "machine.";
-	
 	private MachineService machineService;
 	
 	public MachineController() {
@@ -28,7 +28,7 @@ public class MachineController implements Controller {
 		int id;
 		String name;
 		int number_sensors;
-
+		
 		switch (mode) {
 		
 		// Arriva qui dalla UserReadView. Invoca il Service con il parametro id e invia alla UserReadView uno user da mostrare 
@@ -42,7 +42,7 @@ public class MachineController implements Controller {
 		// Arriva qui dalla UserInsertView. Estrae i parametri da inserire e chiama il service per inserire uno user con questi parametri
 		case "INSERT":
 			name = request.get("name").toString();
-			number_sensors = Integer.parseInt(request.get("number_sensors").toString());
+			number_sensors = Integer.parseInt(request.get("number_sensor").toString());
 			
 			//costruisce l'oggetto user da inserire
 			MachineDTO machinetoinsert = new MachineDTO(name, number_sensors);
@@ -68,7 +68,7 @@ public class MachineController implements Controller {
 		case "UPDATE":
 			id = Integer.parseInt(request.get("id").toString());
 			name = request.get("name").toString();
-			number_sensors = Integer.parseInt(request.get("number_sensors").toString());
+			number_sensors = Integer.parseInt(request.get("number_sensor").toString());
 			MachineDTO machinetoupdate = new MachineDTO(name, number_sensors);
 			machinetoupdate.setId(id);
 			machineService.update(machinetoupdate);
@@ -84,45 +84,43 @@ public class MachineController implements Controller {
 			request.put("machines", machinesDTO);
 			MainDispatcher.getInstance().callView("Machine", request);
 			break;
-			
-		//Esegue uno switch sulla base del comando inserito dall'utente e reindirizza tramite il Dispatcher alla View specifica per ogni operazione
-		//con REQUEST NULL (vedi una View specifica)
-		case "GETCHOICE":
+		
+			//Esegue uno switch sulla base del comando inserito dall'utente e reindirizza tramite il Dispatcher alla View specifica per ogni operazione
+			//con REQUEST NULL (vedi una View specifica)
+				case "GETCHOICE":
+				//toUpperCase() mette in maiuscolo la scelta
+				switch (choice.toUpperCase()) {
+				
+				case "L":
+					MainDispatcher.getInstance().callView(sub_package + "MachineRead", null);
+					break;
 					
-					//toUpperCase() mette in maiuscolo la scelta
-			switch (choice.toUpperCase()) {
+				case "I":
+					MainDispatcher.getInstance().callView(sub_package + "MachineInsert", null);
+					break;
+					
+				case "M":
+					MainDispatcher.getInstance().callView(sub_package + "MachineUpdate", null);
+					break;
+					
+				case "C":
+					MainDispatcher.getInstance().callView(sub_package + "MachineDelete", null);
+					break;
+					
+				case "E":
+					MainDispatcher.getInstance().callView("Login", null);
+					break;
+				
+				case "B":
+					MainDispatcher.getInstance().callView("HomeAdmin", null);
+					break;
+					
+				default:
+					MainDispatcher.getInstance().callView("Login", null);
+				}
+				
+				default:
+				MainDispatcher.getInstance().callView("Login", null);}
 			
-			case "L":
-				MainDispatcher.getInstance().callView(sub_package + "MachineRead", null);
-				break;
-				
-			case "I":
-				MainDispatcher.getInstance().callView(sub_package + "MachineInsert", null);
-				break;
-				
-			case "M":
-				MainDispatcher.getInstance().callView(sub_package + "MachineUpdate", null);
-				break;
-				
-			case "C":
-				MainDispatcher.getInstance().callView(sub_package + "MachineDelete", null);
-				break;
-				
-			case "E":
-				MainDispatcher.getInstance().callView("Login", null);
-				break;
-
-			case "B":
-				MainDispatcher.getInstance().callView("HomeAdmin", null);
-				break;
-				
-			default:
-				MainDispatcher.getInstance().callView("Login", null);
-			}
-			
-		default:
-			MainDispatcher.getInstance().callView("Login", null);
 		}
-	}
-	
 }

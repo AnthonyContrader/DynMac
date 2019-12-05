@@ -46,7 +46,7 @@ public class DepartmentDTO {
 
 	@Override
 	public String toString() {
-		return "Department [id=" + id + ", name=" + name + ", number_operators=" + number_operators + "]";
+		return  id + " \t "+ name + "\t" +  number_operators;
 	}
 
 

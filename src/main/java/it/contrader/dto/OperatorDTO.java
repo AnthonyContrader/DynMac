@@ -47,7 +47,7 @@ public class OperatorDTO {
 
 	@Override
 	public String toString() {
-		return "Operator [id=" + id + ", name=" + name + ", type=" + type + "]";
+		return  id + " \t " + name + " \t" + type ;
 	}
 
 }

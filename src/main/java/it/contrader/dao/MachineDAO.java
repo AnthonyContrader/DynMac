@@ -10,9 +10,9 @@ import it.contrader.model.User;
 public class MachineDAO {
 
 	private final String QUERY_ALL = "SELECT * FROM machine";
-	private final String QUERY_CREATE = "INSERT INTO machine (name, number_sensors) VALUES (?,?)";
+	private final String QUERY_CREATE = "INSERT INTO machine (name, number_sensor) VALUES (?,?)";
 	private final String QUERY_READ = "SELECT * FROM machine WHERE id=?";
-	private final String QUERY_UPDATE = "UPDATE machine SET name=?, number_sensors=? WHERE id=?";
+	private final String QUERY_UPDATE = "UPDATE machine SET name=?, number_sensor=? WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM machine WHERE id=?";
 	
 	public MachineDAO() { }
@@ -28,7 +28,7 @@ public class MachineDAO {
 			while (resultSet.next()) {
 				int id = resultSet.getInt("id");
 				String name = resultSet.getString("name");
-				int number_sensors = Integer.parseInt(resultSet.getString("number_sensors"));
+				int number_sensors = Integer.parseInt(resultSet.getString("number_sensor"));
 				machine = new Machine(name, number_sensors);
 				machine.setId(id);
 				machinesList.add(machine);
@@ -64,7 +64,7 @@ public class MachineDAO {
 			int number_sensors;
 
 			name = resultSet.getString("name");
-			number_sensors = Integer.parseInt(resultSet.getString("number_sensors"));
+			number_sensors = Integer.parseInt(resultSet.getString("number_sensor"));
 			Machine machine = new Machine(name, number_sensors);
 			machine.setId(resultSet.getInt("id"));
 			return machine;
@@ -98,7 +98,7 @@ public class MachineDAO {
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setString(1, machineToUpdate.getName());
 				preparedStatement.setInt(2, machineToUpdate.getNumber_sensors());
-				preparedStatement.setInt(4, machineToUpdate.getId());
+				preparedStatement.setInt(3, machineToUpdate.getId());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;

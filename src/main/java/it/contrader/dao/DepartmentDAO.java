@@ -60,22 +60,21 @@ public class DepartmentDAO {
 
 	}
 
-	public Department read(int userId) {
+	public Department read(int id) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 
-
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
-			preparedStatement.setInt(1, userId);
+			preparedStatement.setInt(1, id);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 			String name;
-			int number_opearators;
+			int number_operators;
 
 			name = resultSet.getString("name");
-			number_opearators = resultSet.getInt("number_opearators");
+			number_operators = resultSet.getInt("number_operators");
 			
-			Department department = new Department(name, number_opearators);
+			Department department = new Department(name, number_operators);
 			department.setId(resultSet.getInt("id"));
 
 			return department;

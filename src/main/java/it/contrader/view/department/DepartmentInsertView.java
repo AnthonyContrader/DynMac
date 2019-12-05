@@ -28,11 +28,10 @@ public class DepartmentInsertView extends AbstractView {
 
 	@Override
 	public void showOptions() {
-			System.out.println("Inserisci nome dell'operatore:");
+			System.out.println("Inserisci nome del reparto:");
 			name = getInput();
 			System.out.println("Inserisci il numero di operatori:");
 			number_operators = Integer.parseInt(getInput());
-
 	}
 
 
