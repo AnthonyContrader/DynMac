@@ -76,6 +76,8 @@ public class User {
 		return  id + "\t"  + username +"\t\t" +   password + "\t\t" + usertype;
 	}
 
+	
+	
 	//Metodo per il confronto degli oggetti
 	@Override
 	public boolean equals(Object obj) {
