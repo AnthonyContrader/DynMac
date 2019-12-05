@@ -69,7 +69,7 @@ public class OperatorController implements Controller {
 			MainDispatcher.getInstance().callView(sub_package + "OperatorUpdate", request);
 			break;
 			
-		case "OPERATORLIST":
+		case "OPERATORSLIST":
 			List<OperatorDTO> operatorsDTO = operatorService.getAll();
 			request.put("operators", operatorsDTO);
 			MainDispatcher.getInstance().callView("Operator", request);

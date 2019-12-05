@@ -23,7 +23,7 @@ public class HomeAdminView extends AbstractView {
 	 */
     public void showResults(Request request) {
     	if(request!=null) {
-    	System.out.println("\n Benvenuto in SAMPLE PROJECT "+request.get("username").toString() + "\n");
+    	System.out.println("\n Benvenuto in DYNMAC PROJECT "+request.get("username").toString() + "\n");
     	}
     }
 
@@ -54,17 +54,17 @@ public class HomeAdminView extends AbstractView {
         	break;
         	
         case "m":
-        	this.request.put("mode", "MACHINELIST");
+        	this.request.put("mode", "MACHINESLIST");
         	MainDispatcher.getInstance().callAction("Machine", "doControl", request);
         	break;
         	
         case "d":
-        	this.request.put("mode", "DEPARTMENTLIST");
+        	this.request.put("mode", "DEPARTMENTSLIST");
         	MainDispatcher.getInstance().callAction("Department", "doControl", request);
         	break;
         	
         case "o":
-        	this.request.put("mode", "OPERATORLIST");
+        	this.request.put("mode", "OPERATORSLIST");
         	MainDispatcher.getInstance().callAction("Operator", "doControl", request);
         	break;
  
