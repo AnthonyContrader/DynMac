@@ -38,7 +38,7 @@ public class MachineInsertView extends AbstractView {
 	public void submit() {
 		request = new Request();
 		request.put("name", name);
-		request.put("number_sensors", number_sensors);
+		request.put("number_sensor", number_sensors);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Machine", "doControl", request);
 	}
