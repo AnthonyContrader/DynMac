@@ -1,2 +1,1 @@
-# DynMac
-Dynamic Machines
+# DORSE
