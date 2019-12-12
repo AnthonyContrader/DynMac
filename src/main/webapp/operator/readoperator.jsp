@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.UserDTO"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.OperatorDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Read Department</title>
+<title>Read Operator</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
@@ -13,19 +13,17 @@
 <br>
 
 <div class="main">
-<%UserDTO u = (UserDTO) request.getAttribute("dto");%>
+<%OperatorDTO o = (OperatorDTO) request.getAttribute("dto");%>
 
 
 <table>
 	<tr> 
-		<th>Username</th>
-		<th>Password</th>
-		<th>Usertype</th>
+		<th>Name</th>
+		<th>Tipo Operatori</th>
 	</tr>
 	<tr>
-		<td><%=u.getUsername()%></td>
-		<td> <%=u.getPassword()%></td>
-		<td> <%=u.getUsertype()%></td>
+		<td><%=o.getName()%></td>
+		<td><%=o.getType()%></td>
 	</tr>	
 </table>
 

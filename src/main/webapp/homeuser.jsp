@@ -5,12 +5,19 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Home Admin</title>
+<title>Home User</title>
 <link href="css/vittoriostyle.css" rel="stylesheet">
 </head>
 <body>
-<%@include file="css/header.jsp"%>
 
+<div class="navbar">
+  <a href="homeuser.jsp">Home</a>
+  <a href="readmachineuser.jsp">Machine</a>
+  <a class="active" href="DepartmentServlet?mode=departmentlist">Department</a>
+  <a class="active" href="OperatorServlet?mode=operatorlist">Operator</a>
+  <a href="LogoutServlet" id="logout">Logout</a>
+</div>
+<br>
 <div class="main">
 <h1>Welcome ${user.getUsername()}</h1>
 

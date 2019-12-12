@@ -32,4 +32,40 @@
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/UserServlet</url-pattern>
   </servlet-mapping>
+  
+  
+  <servlet>
+    <description></description>
+    <display-name>MachineServlet</display-name>
+    <servlet-name>MachineServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.MachineServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MachineServlet</servlet-name>
+    <url-pattern>/MachineServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>DepartmentServlet</display-name>
+    <servlet-name>DepartmentServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.DepartmentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DepartmentServlet</servlet-name>
+    <url-pattern>/DepartmentServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>OperatorServlet</display-name>
+    <servlet-name>OperatorServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.OperatorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OperatorServlet</servlet-name>
+    <url-pattern>/OperatorServlet</url-pattern>
+  </servlet-mapping>
+   
+  
 </web-app>
