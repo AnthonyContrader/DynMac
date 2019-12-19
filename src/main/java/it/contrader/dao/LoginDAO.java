@@ -28,7 +28,6 @@ public class LoginDAO {
 			
 			statement.setString(1, username);
 			statement.setString(2, password);
-
 			
 			ResultSet resultSet;
 			
