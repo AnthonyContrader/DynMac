@@ -15,7 +15,7 @@ div.text{
 	text-align: center;
 	font-size: 800%;
 	font-family: sans-serif;
-	color: #00a990;
+	color: Orange;
 }
 
 .main {
@@ -121,7 +121,7 @@ a:visited {
 /*Tables*/
 table {
 	border-collapse: collapse;
-	width: 50%;
+	width: max-content;
 	float:left;
 	border-radius:4px;
     -moz-border-radius:4px;
@@ -173,7 +173,6 @@ width: 100%;
   cursor: pointer;
 	
 }
-
 
 
 
@@ -284,7 +283,7 @@ button:hover {
 
 /*Navigation bar*/
 div.navbar {
-	background: #00a990;
+	background: Orange;
 	overflow: hidden;
 	position: sticky;
 	width: 100%;
@@ -304,16 +303,16 @@ div.navbar a {
 	text-decoration: none;
 	font-size: 17px;
 	border-radius: 7px;
-	background: #00a990;
+	background: Orange;
 }
 
 div.navbar a:hover {
-	background: #00ccad;
+	background: Orange;
 	color: #ffffff;
 }
 
 div.navbar a.active {
-	background: #00ccad;
+	background: Light Grey;
 	color: #ffffff;
 }
 

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1" import="it.contrader.dto.UserDTO"%>
+	pageEncoding="ISO-8859-1" import="it.contrader.dto.OperatorDTO"
+							  import="it.contrader.dto.DepartmentDTO"
+	                          import="it.contrader.dto.MachineDTO"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -8,7 +10,7 @@
 <meta name="description" content="User Read">
 <meta name="author" content="Vittorio Valent">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
-<title>Read User</title>
+<title>Read Operator</title>
 </head>
 <body>
 	<%@ include file="./css/header.jsp"%>
@@ -17,22 +19,23 @@
 
 	<div class="main">
 		<%
-			UserDTO u = (UserDTO) request.getSession().getAttribute("dto");
+			//MachineDTO m = (MachineDTO) request.getSession().getAttribute("dto");
+			OperatorDTO o = (OperatorDTO) request.getSession().getAttribute("dto");
+			//DepartmentDTO  d = (DepartmentDTO) request.getSession().getAttribute("dto");
 		%>
 
 
 		<table>
 			<tr>
 				<th>ID</th>
-				<th>Username</th>
-				<th>Password</th>
-				<th>Usertype</th>
+				<th>Name</th>
+				<th>Type</th>				
 			</tr>
+			
 			<tr>
-				<td><%=u.getId()%></td>
-				<td><%=u.getUsername()%></td>
-				<td><%=u.getPassword()%></td>
-				<td><%=u.getUsertype()%></td>
+				<td><%=o.getId()%></td>
+				<td><%=o.getName()%></td>
+				<td><%=o.getType()%></td>
 			</tr>
 		</table>
 

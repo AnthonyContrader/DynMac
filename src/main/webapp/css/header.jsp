@@ -8,7 +8,19 @@
 </head>
 <body>
 
-	<div class="header">SAMPLE Project</div>
+	<div class="header">DYNMAC Project</div>
+	
+		<div class="navbar">
+		<a class="active" href="/homeadmin.jsp">Home</a> <a href=/user/getall>Users</a>
+		 <a href=/machine/getall>Machines</a>
+		 <a href=/department/getall>Departments</a>
+		 <a href=/operator/getall>Operators</a>
+		 <a href=/sensor/getall>Sensors</a>
+		 <a href=/store/getall>Store</a>
+		 <a href=/purchaseorder/getall>Orders</a>
+		 <a href=/report/getall>Report</a>
+		<a href="/user/logout" id="logout">Logout</a>
+	</div>
 
 </body>
 </html>
