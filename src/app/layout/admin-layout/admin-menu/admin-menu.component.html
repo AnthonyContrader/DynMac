@@ -30,6 +30,92 @@
                         </i> Manage Users </a>
                 </button>
             </div>
+
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#machines"
+                (click)="machinescollapse()">
+                <i class="fas fa-users" style="margin-right: 15px"></i>Machine
+            </button>
+
+            <div class="collapsebtn" id="machines" *ngIf="isMachineCollapsed">
+                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                    <a [routerLink]="['/admin-dashboard/machines']"> <i class="fas fa-edit" style="margin-right: 10px">
+                        </i> Manage Machines </a>
+                </button>
+            </div>
+
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#departments"
+                (click)="departmentscollapse()">
+                <i class="fas fa-users" style="margin-right: 15px"></i>Department
+            </button>
+
+            <div class="collapsebtn" id="departments" *ngIf="isDepartmentCollapsed">
+                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                    <a [routerLink]="['/admin-dashboard/departments']"> <i class="fas fa-edit" style="margin-right: 10px">
+                        </i> Manage Departments </a>
+                </button>
+            </div>
+
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#operators"
+                (click)="operatorscollapse()">
+                <i class="fas fa-users" style="margin-right: 15px"></i>Operator
+            </button>
+
+            <div class="collapsebtn" id="operators" *ngIf="isOperatorCollapsed">
+                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                    <a [routerLink]="['/admin-dashboard/operators']"> <i class="fas fa-edit" style="margin-right: 10px">
+                        </i> Manage Operators </a>
+                </button>
+            </div>
+
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#sensors"
+                (click)="sensorscollapse()">
+                <i class="fas fa-users" style="margin-right: 15px"></i>Sensors
+            </button>
+
+            <div class="collapsebtn" id="sensors" *ngIf="isSensorCollapsed">
+                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                    <a [routerLink]="['/admin-dashboard/sensors']"> <i class="fas fa-edit" style="margin-right: 10px">
+                        </i> Manage Sensors </a>
+                </button>
+            </div>
+
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#purchaseorders"
+                (click)="purchaseorderscollapse()">
+                <i class="fas fa-users" style="margin-right: 15px"></i>Orders
+            </button>
+
+            <div class="collapsebtn" id="purchaseorders" *ngIf="isPurchaseorderCollapsed">
+                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                    <a [routerLink]="['/admin-dashboard/purchaseorders']"> <i class="fas fa-edit" style="margin-right: 10px">
+                        </i> Manage Orders </a>
+                </button>
+            </div>
+
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#stores"
+                (click)="storescollapse()">
+                <i class="fas fa-users" style="margin-right: 15px"></i>Store
+            </button>
+
+            <div class="collapsebtn" id="stores" *ngIf="isStoreCollapsed">
+                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                    <a [routerLink]="['/admin-dashboard/stores']"> <i class="fas fa-edit" style="margin-right: 10px">
+                        </i> Manage Stores </a>
+                </button>
+            </div>
+
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#reports"
+                (click)="reportscollapse()">
+                <i class="fas fa-users" style="margin-right: 15px"></i>Report
+            </button>
+
+            <div class="collapsebtn" id="reports" *ngIf="isReportCollapsed">
+                <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                    <a [routerLink]="['/admin-dashboard/reports']"> <i class="fas fa-edit" style="margin-right: 10px">
+                        </i> Manage Reports </a>
+                </button>
+            </div>
+
+
             <button class="menubtn" (click)="logout()">
                 <i class="fas fa-sign-out-alt" style="margin-right: 15px"></i>Logout
             </button>

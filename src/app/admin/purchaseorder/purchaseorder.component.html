@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="row mt-5">
+      
+      <div class="col-md-10">
+<table>
+  <tr>
+    <th>
+      Nome pezzi di ricambio
+    </th>
+    <th>
+      Descrizione
+    </th>
+    <th>
+      Numero pz da ord.
+    </th>
+    <th>
+        Id Store
+     </th>
+  </tr>
+
+  <tr>
+      <td>
+        <input placeholder="name_spareparts" [(ngModel)]="ordertoinsert.name_spareparts">
+      </td>
+      <td>
+        <input placeholder="description" [(ngModel)]="ordertoinsert.description">
+      </td>
+      <td>
+          <input placeholder="number_PiecesToOrder" [(ngModel)]="ordertoinsert.number_PiecesToOrder">
+        </td>
+      
+      <td>
+          <select [(ngModel)]="ordertoinsert.storeDTO">
+              <option *ngFor="let store of stores" [ngValue]="store">{{store.name}}</option>
+          </select>      
+      </td>
+      
+      <td>
+        <button (click)="insert(ordertoinsert)">Insert</button>
+      </td>
+      <td>
+        <button (click)="clear()">Clear</button>
+      </td>
+    </tr>
+
+    <tr *ngFor="let order of orders">
+        <td>
+          <input placeholder="name_spareparts" [(ngModel)]="order.name_spareparts">
+        </td> 
+        <td>
+            <input placeholder="description" [(ngModel)]="order.description">
+        </td>
+        
+        <td>
+            <input placeholder="number_PiecesToOrder" [(ngModel)]="order.number_PiecesToOrder">
+          </td>
+        
+          <td>
+              {{order.storeDTO.name}}
+              <select [(ngModel)]="order.storeDTO">
+                  <option hidden> {{order.storeDTO.name}}</option>
+                  <option *ngFor="let store of stores" [ngValue]="store">{{store.name}}</option>
+              </select>       
+          </td>
+      
+        <td>
+          <button (click)=update(order)>Save</button>
+        </td>
+
+        <td>
+          <button (click)="delete(order)">Delete</button>
+        </td>
+  </tr>
+
+</table> 
+</div>
+<div class="col-md-1">
+
+</div>
+</div>
+</div>

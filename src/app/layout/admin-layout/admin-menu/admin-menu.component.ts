@@ -12,6 +12,15 @@ export class AdminMenuComponent implements OnInit {
   isClientCollapsed = false;
   isAccountCollapsed = false;
 
+  isMachineCollapsed = false;
+  isDepartmentCollapsed = false;
+  isOperatorCollapsed = false;
+  isPurchaseorderCollapsed = false;
+  isReportCollapsed = false;
+  isSensorCollapsed = false;
+  isStoreCollapsed = false;
+
+
   constructor(private router: Router) {
   }
 
@@ -34,4 +43,47 @@ export class AdminMenuComponent implements OnInit {
       this.isAccountCollapsed = true;
     } else { this.isAccountCollapsed = false; }
   }
+
+  machinescollapse() {
+    if (this.isMachineCollapsed === false) {
+      this.isMachineCollapsed = true;
+    } else { this.isMachineCollapsed = false; }
+  }
+
+  departmentscollapse() {
+    if (this.isDepartmentCollapsed === false) {
+      this.isDepartmentCollapsed = true;
+    } else { this.isDepartmentCollapsed = false; }
+  }
+
+  operatorscollapse() {
+    if (this.isOperatorCollapsed === false) {
+      this.isOperatorCollapsed = true;
+    } else { this.isOperatorCollapsed = false; }
+  }
+
+  purchaseorderscollapse() {
+    if (this.isPurchaseorderCollapsed === false) {
+      this.isPurchaseorderCollapsed = true;
+    } else { this.isPurchaseorderCollapsed = false; }
+  }
+
+  reportscollapse() {
+    if (this.isReportCollapsed === false) {
+      this.isReportCollapsed = true;
+    } else { this.isReportCollapsed = false; }
+  }
+
+  sensorscollapse() {
+    if (this.isSensorCollapsed === false) {
+      this.isSensorCollapsed = true;
+    } else { this.isSensorCollapsed = false; }
+  }
+
+  storescollapse() {
+    if (this.isStoreCollapsed === false) {
+      this.isStoreCollapsed = true;
+    } else { this.isStoreCollapsed = false; }
+  }
+
 }

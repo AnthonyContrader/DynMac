@@ -1,0 +1,130 @@
+<div class="container">
+  <div class="row mt-5">
+    
+    <div class="col-md-10">
+<table>
+<tr>
+  <th>
+    Produzione Precedente
+  </th>
+  <th>
+    Produzione Totale
+  </th>
+  <th>
+     Produzione Attuale
+  </th>
+  <th>
+    Scarti
+  </th>
+  <th>
+     Prod. netto
+  </th>
+  <th>
+    Costo
+  </th>
+  <th>
+    Id Machine
+  </th>
+  <th>
+    Id Operator
+  </th>
+
+</tr>
+
+<tr>
+    <td>
+      <input placeholder="production" [(ngModel)]="reporttoinsert.production">
+    </td>
+
+    <td>
+      <input placeholder="totalProduction" [(ngModel)]="reporttoinsert.totalProduction">
+    </td>
+
+    <td>
+        <input placeholder="difference" [(ngModel)]="reporttoinsert.difference">
+    </td>
+
+    <td>
+      <input placeholder="waste" [(ngModel)]="reporttoinsert.waste">
+    </td>
+
+    <td>
+      <input placeholder="net" [(ngModel)]="reporttoinsert.net">
+    </td>
+
+    <td>
+      <input placeholder="cost" [(ngModel)]="reporttoinsert.cost">
+    </td>
+      
+    <td>
+      <select [(ngModel)]="reporttoinsert.machineDTO">
+          <option *ngFor="let machine of machines" [ngValue]="machine">{{machine.id}}</option>
+      </select>      
+  </td>
+    
+    <td>
+      <select [(ngModel)]="reporttoinsert.operatorDTO">
+          <option *ngFor="let operator of operators" [ngValue]="operator">{{operator.id}}</option>
+      </select>      
+    </td>
+
+    <td>
+      <button (click)="insert(reporttoinsert)">Insert</button>
+    </td>
+
+    <td>    
+      <button (click)="clear()">Clear</button>
+    </td>
+  </tr>
+
+  <tr *ngFor="let report of reports">
+      <td>
+        <input placeholder="production" [(ngModel)]="report.production">
+      </td> 
+      <td>
+          <input placeholder="totalProduction" [(ngModel)]="report.totalProduction">
+      </td>
+      <td>
+        <input placeholder="difference" [(ngModel)]="report.totalProduction - report.production">
+      </td> 
+      <td>
+          <input placeholder="waste" [(ngModel)]="report.waste">
+      </td>
+      <td>
+        <input placeholder="net" [(ngModel)]="report.totalProduction - report.production - report.waste">
+      </td> 
+      <td>
+          <input placeholder="cost" [(ngModel)]="report.cost">
+      </td>
+      
+      <td>
+          {{report.machineDTO.name}}
+          <select [(ngModel)]="report.machineDTO">
+            
+              <option *ngFor="let machine of machines" [ngValue]="machine">{{machine.id}}</option>
+          </select>        
+      </td>
+  
+        <td>
+            {{report.operatorDTO.name}}
+            <select [(ngModel)]="report.operatorDTO">
+                
+                <option *ngFor="let operator of operators" [ngValue]="operator">{{operator.id}}</option>
+            </select>       
+        </td>
+    
+      <td>
+        <button (click)="update(report)">Save</button>
+      </td>
+
+      <td>
+        <button (click)="delete(report)">Delete</button>
+      </td>
+</tr>
+</table> 
+</div>
+<div class="col-md-1">
+
+</div>
+</div>
+</div>

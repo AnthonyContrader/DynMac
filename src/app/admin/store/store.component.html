@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row mt-5">
+      
+      <div class="col-md-10">
+<table>
+  <tr>
+    <th>
+     Nome
+    </th>
+    <th>
+     Numero pz. ricambio 
+    </th>
+    <th>
+     Costo
+   </th>
+   <th>
+     Totale Costo
+  </th>
+    
+  </tr>
+
+  <tr>
+      <td>
+        <input placeholder="name" [(ngModel)]="storetoinsert.name">
+      </td>
+      <td>
+        <input placeholder="number_spareparts" [(ngModel)]="storetoinsert.number_spareparts">
+      </td>
+      <td>
+        <input placeholder="cost" [(ngModel)]="storetoinsert.cost">
+      </td>
+      <td>
+        <input placeholder="totCost" [(ngModel)]="storetoinsert.totCost">
+      </td>
+      
+      <td>
+        <button (click)="insert(storetoinsert)">Insert</button>
+      </td>
+      <td>
+        <button (click)="clear()">Clear</button>
+      </td>
+    </tr>
+    <tr *ngFor="let store of stores">
+        <td>
+          <input placeholder="name" [(ngModel)]="store.name">
+        </td>
+        <td>
+            <input placeholder="number_spareparts" [(ngModel)]="store.number_spareparts">
+        </td>
+        <td>
+            <input placeholder="cost" [(ngModel)]="store.cost">
+        </td>
+        <td>
+            <input placeholder="totCost" [(ngModel)]="store.totCost">
+        </td>
+      
+        <td>
+          <button (click)=update(store)>Save</button>
+        </td>
+
+        <td>
+          <button (click)="delete(store)">Delete</button>
+        </td>
+
+      <!--<div *ngIf="NewOrder(store)"> </div> -->
+  </tr>
+
+</table> 
+</div>
+<div class="col-md-1">
+
+</div>
+</div>
+</div>

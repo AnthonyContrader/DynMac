@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDTO } from 'src/dto/userdto';
+import { MachineDTO } from 'src/dto/machinedto';
 
 /**
  * Componente della dashboard admin. Nell'ngOnInit recupera
@@ -13,7 +14,7 @@ import { UserDTO } from 'src/dto/userdto';
 export class AdminDashboardComponent implements OnInit {
 
   user: UserDTO;
-
+  machine: MachineDTO;
   constructor() { }
 
   ngOnInit() {

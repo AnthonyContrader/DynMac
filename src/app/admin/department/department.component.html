@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row mt-5">
+      
+      <div class="col-md-10">
+<table>
+  <tr>
+    <th>
+      Nome
+    </th>
+    <th>
+      Numero Operatori
+    </th>
+    
+  </tr>
+
+  <tr>
+      <td>
+        <input placeholder="name" [(ngModel)]="departmenttoinsert.name">
+      </td>
+      <td>
+        <input placeholder="number_operators" [(ngModel)]="departmenttoinsert.number_operators">
+      </td>
+      
+      <td>
+        <button (click)="insert(departmenttoinsert)">Insert</button>
+      </td>
+      <td>
+        <button (click)="clear()">Clear</button>
+      </td>
+    </tr>
+    <tr *ngFor="let department of departments">
+        <td>
+          <input placeholder="name" [(ngModel)]="department.name">
+        </td> 
+        <td>
+            <input placeholder="number_operators" [(ngModel)]="department.number_operators">
+        </td>
+      
+        <td>
+          <button (click)=update(department)>Save</button>
+        </td>
+
+        <td>
+          <button (click)="delete(department)">Delete</button>
+        </td>
+  </tr>
+</table> 
+</div>
+<div class="col-md-1">
+
+</div>
+</div>
+</div>

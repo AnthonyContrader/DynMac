@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="row mt-5">
+     
+      <div class="col-md-10">
+<table>
+  <tr>
+    <th>
+      Nome
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+       Id Reparto
+    </th>
+    <th>
+        Id Macchina
+     </th>
+  </tr>
+
+  <tr>
+      <td>
+        <input placeholder="name" [(ngModel)]="operatortoinsert.name">
+      </td>
+      <td>
+        <input placeholder="type" [(ngModel)]="operatortoinsert.type">
+      </td>
+      
+      <td>
+          <select [(ngModel)]="operatortoinsert.departmentDTO">
+              <option *ngFor="let department of departments" [ngValue]="department">{{department.name}}</option>
+          </select>      
+      </td>
+
+      <td>
+          <select [(ngModel)]="operatortoinsert.machineDTO">
+              <option *ngFor="let machine of machines" [ngValue]="machine">{{machine.name}}</option>
+          </select>      
+      </td>
+      
+      <td>
+        <button (click)="insert(operatortoinsert)">Insert</button>
+      </td>
+      <td>
+        <button (click)="clear()">Clear</button>
+      </td>
+    </tr>
+
+    <tr *ngFor="let operator of operators">
+        <td>
+          <input placeholder="name" [(ngModel)]="operator.name">
+        </td> 
+        <td>
+            <input placeholder="type" [(ngModel)]="operator.type">
+        </td>
+        
+        <td>
+            {{operator.departmentDTO.name}}
+            <select [(ngModel)]="operator.departmentDTO">
+                <option hidden> {{operator.departmentDTO.name}}</option>
+                <option *ngFor="let department of departments" [ngValue]="department">{{department.name}}</option>
+            </select>       
+        </td>
+
+        <td>
+            {{operator.machineDTO.name}}
+            <select [(ngModel)]="operator.machineDTO">
+                <option hidden> {{operator.machineDTO.name}}</option>
+                <option *ngFor="let machine of machines" [ngValue]="machine">{{machine.name}}</option>
+            </select>        
+        </td>
+      
+        <td>
+          <button (click)=update(operator)>Save</button>
+        </td>
+
+        <td>
+          <button (click)="delete(operator)">Delete</button>
+        </td>
+  </tr>
+
+</table> 
+</div>
+<div class="col-md-1">
+
+</div>
+</div>
+</div>

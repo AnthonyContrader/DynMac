@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row mt-5">
+      <div class="col-md-1">
+  
+      </div>
+      <div class="col-md-10">
+<table>
+  <tr>
+    <th>
+      Nome
+    </th>
+    <th>
+      Numero Sensori
+    </th>
+    <th>
+       Reparto
+    </th>
+
+  </tr>
+
+  <tr>
+      <td>
+        <input placeholder="name" [(ngModel)]="machinetoinsert.name">
+      </td>
+      <td>
+        <input placeholder="number_sensor" [(ngModel)]="machinetoinsert.number_sensor">
+      </td>
+      
+      <td>
+          <select [(ngModel)]="machinetoinsert.departmentDTO">
+              <option *ngFor="let department of departments" [ngValue]="department">{{department.name}}</option>
+          </select>      
+      </td>
+
+      <td>
+        <button (click)="insert(machinetoinsert)">Insert</button>
+      </td>
+      <td>
+        <button (click)="clear()">Clear</button>
+      </td>
+    </tr>
+
+    <tr *ngFor="let machine of machines">
+        <td>
+          <input placeholder="name" [(ngModel)]="machine.name">
+        </td> 
+        <td>
+            <input placeholder="number_sensor" [(ngModel)]="machine.number_sensor">
+        </td>
+        
+        <td>
+            
+          {{machine.departmentDTO.name}}
+          <select [(ngModel)]="machine.departmentDTO">
+              <option hidden> {{machine.departmentDTO.name}}</option>
+              <option *ngFor="let department of departments" [ngValue]="department">{{department.name}}</option>
+          </select>      
+       </td>
+
+        <td>
+          <button (click)=update(machine)>Save</button>
+        </td>
+
+        <td>
+          <button (click)="delete(machine)">Delete</button>
+        </td>
+  </tr>
+</table> 
+</div>
+<div class="col-md-1">
+
+</div>
+</div>
+</div>

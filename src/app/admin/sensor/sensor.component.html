@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="row mt-5">
+      
+      <div class="col-md-10">
+<table>
+  <tr>
+    <th>
+      Nome
+    </th>
+    <th>
+      Tempo di vita del sensore (settimana) 
+    </th>
+    <th>
+       Id Store
+    </th>
+    <th>
+        Id Macchina
+     </th>
+  </tr>
+
+  <tr>
+      <td>
+        <input placeholder="name" [(ngModel)]="sensortoinsert.name">
+      </td>
+      <td>
+        <input placeholder="lifetime" [(ngModel)]="sensortoinsert.lifetime">
+      </td>
+      
+      <td>
+          <select [(ngModel)]="sensortoinsert.storeDTO">
+              <option *ngFor="let store of stores" [ngValue]="store">{{store.name}}</option>
+          </select>      
+      </td>
+
+      <td>
+          <select [(ngModel)]="sensortoinsert.machineDTO">
+              <option *ngFor="let machine of machines" [ngValue]="machine">{{machine.name}}</option>
+          </select>      
+      </td>
+      
+      <td>
+        <button (click)="insert(sensortoinsert)">Insert</button>
+      </td>
+      <td>
+        <button (click)="clear()">Clear</button>
+      </td>
+    </tr>
+
+    <tr *ngFor="let sensor of sensors">
+        <td>
+          <input placeholder="name" [(ngModel)]="sensor.name">
+        </td> 
+        <td>
+            <input placeholder="lifetime" [(ngModel)]="sensor.lifetime">
+        </td>
+        
+        <td>
+            {{sensor.storeDTO.name}}
+            <select [(ngModel)]="sensor.storeDTO">
+                <option hidden> {{sensor.storeDTO.name}}</option>
+                <option *ngFor="let store of stores" [ngValue]="store">{{store.name}}</option>
+            </select>       
+        </td>
+
+        <td>
+            {{sensor.machineDTO.name}}
+            <select [(ngModel)]="sensor.machineDTO">
+                <option hidden> {{sensor.machineDTO.name}}</option>
+                <option *ngFor="let machine of machines" [ngValue]="machine">{{machine.name}}</option>
+            </select>       
+        </td>
+
+      
+        <td>
+          <button (click)=update(sensor)>Save</button>
+        </td>
+
+        <td>
+          <button (click)="delete(sensor)">Delete</button>
+        </td>
+  </tr>
+
+</table> 
+</div>
+<div class="col-md-1">
+
+</div>
+</div>
+</div>
